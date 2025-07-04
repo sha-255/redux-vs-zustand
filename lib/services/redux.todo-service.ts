@@ -12,6 +12,7 @@ export const todoApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com",
   }),
+  tagTypes: ["Todo"],
   endpoints: (build) => ({
     fetchToDosLimit: build.query<TodoRTK[], number>({
       query: (limit: number) => ({
@@ -20,6 +21,8 @@ export const todoApi = createApi({
           _limit: limit,
         },
       }),
+      providesTags: ["Todo"],
+      // on upd/del (build.mutation): invalidatesTags: ["Todo"],
     }),
   }),
 });

@@ -8,13 +8,19 @@ interface Todo {
   completed: boolean;
 }
 
-export default function TodosList(props: {
+interface TodoListProps {
   todos: Todo[];
   title: string;
   isOpen: boolean;
   isLoading?: boolean;
-}) {
-  const { todos, title, isOpen, isLoading } = props;
+}
+
+export default function TodosList({
+  todos,
+  title,
+  isOpen,
+  isLoading,
+}: TodoListProps) {
   const [openTodos, setOpenTodos] = useState(isOpen);
 
   return (

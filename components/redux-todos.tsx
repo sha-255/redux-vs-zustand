@@ -17,5 +17,12 @@ export default function ReduxTodos() {
 
   const isLoading = !reduxTodos || reduxTodos.length === 0;
 
-  return <TodosList todos={reduxTodos} title="Redux Todos" isOpen={true} isLoading={isLoading} />;
+  return (
+    <TodosList
+      todos={reduxTodos}
+      title="Redux Todos"
+      isOpen={false}
+      isLoading={isLoading}
+    />
+  );
 }

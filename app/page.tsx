@@ -1,5 +1,6 @@
 "use client";
 import ReduxTodos from "@/components/redux-todos";
+import RtkTodos from "@/components/rtk-todos";
 import ZustandTodos from "@/components/zustand-todos";
 import { increment } from "@/lib/features/counter/redux.counter-slice";
 import { useAppDispatch } from "@/lib/redux.hooks";
@@ -48,6 +49,7 @@ export default function Home() {
         </button>
         <span className="text-lg">{countZustand}</span>
       </div>
+      <RtkTodos />
       <ReduxTodos />
       <ZustandTodos />
     </div>
